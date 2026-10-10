@@ -1,0 +1,50 @@
+{
+  "name": "Scattered Spider - Automated Analysis",
+  "versions": {
+    "attack": "15",
+    "navigator": "5.0.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Scattered Spider carried out social engineering via SMS phishing to harvest Okta credentials, registered unauthorized MFA hardware tokens for persistence, executed PowerShell scripts for Active Directory user discovery, and deployed AnyDesk for remote command and control.",
+  "techniques": [
+    {
+      "techniqueID": "T1566.002",
+      "score": 95,
+      "comment": "[Initial Access] Evidence: Attackers sent SMS phishing links imitating Okta login portals to steal employee credentials.",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1098.005",
+      "score": 90,
+      "comment": "[Persistence] Evidence: They then enrolled new MFA hardware tokens to establish persistence on compromised accounts.",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.001",
+      "score": 95,
+      "comment": "[Execution] Evidence: After gaining initial access, the group used PowerShell scripts to discover Active Directory users and installed AnyDesk software to maintain remote command and control.",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1087.002",
+      "score": 95,
+      "comment": "[Discovery] Evidence: After gaining initial access, the group used PowerShell scripts to discover Active Directory users and installed AnyDesk software to maintain remote command and control.",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1219",
+      "score": 95,
+      "comment": "[Command and Control] Evidence: After gaining initial access, the group used PowerShell scripts to discover Active Directory users and installed AnyDesk software to maintain remote command and control.",
+      "enabled": true
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffebee",
+      "#c62828"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  }
+}
